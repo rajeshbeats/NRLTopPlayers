@@ -10,15 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView!
-	let datasource = HomeDataSource()
 	lazy var viewModel: HomeViewModelProtocol = {
-		return HomeViewModel(listDataSource: datasource)
+		return HomeViewModel(listDataSource: HomeDataSource())
 	}()
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		title = Constant.appName
 		collectionView.delegate = self
-		collectionView.dataSource = datasource
+		collectionView.dataSource = viewModel.dataSource
 		viewModel.fetchTopPlayers { [weak self] in
 			guard let this = self else {
 				return
@@ -28,11 +28,18 @@ class HomeViewController: UIViewController {
 			}
 		}
 	}
-}
 
-extension HomeViewController: UICollectionViewDelegate {
-	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		guard let indexPath = collectionView.indexPathsForSelectedItems?.first,
+			let player = viewModel.selectedPlayer(indexPath), let teamId = viewModel.selectedTeam(indexPath) else {
+			return
+		}
+		guard let viewController = segue.destination as? PlayerDetailsViewController else {
+			return
+		}
+		let playerDataSource = PlayerDetailsDataSource(player)
+		let playerViewModel = PlayerDetailsViewModel(dataSource: playerDataSource, teamId: teamId)
+		viewController.viewModel = playerViewModel
 	}
 }
 

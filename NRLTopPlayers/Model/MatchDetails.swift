@@ -46,7 +46,7 @@ struct Player: Codable {
 	let shortName: String?
 	let statValue: Int?
 	let jumberNumber: Int?
-	let lastMatchStats: [String?: Int?]?
+	let lastMatchStats: [String: Int?]?
 
 	enum CodingKeys: String, CodingKey {
 		case playerId = "id"
@@ -67,5 +67,24 @@ struct Player: Codable {
 		statValue = try? values.decodeIfPresent(Int.self, forKey: .statValue)
 		jumberNumber = try? values.decodeIfPresent(Int.self, forKey: .jumberNumber)
 		lastMatchStats = try? values.decodeIfPresent([String: Int?].self, forKey: .lastMatchStats)
+	}
+}
+
+extension Array where Element == MatchDetails {
+	subscript(indexPath: IndexPath) -> Player? {
+		let index = Int(indexPath.item / 2)
+		if indexPath.item % 2 == 0 {
+			return self[indexPath.section].teamA?.topPlayers?[index]
+		} else {
+			return self[indexPath.section].teamB?.topPlayers?[indexPath.item / 2]
+		}
+	}
+
+	func teamId(for indexPath: IndexPath) -> Int? {
+		if indexPath.item % 2 == 0 {
+			return self[indexPath.section].teamA?.teamId
+		} else {
+			return self[indexPath.section].teamB?.teamId
+		}
 	}
 }
