@@ -12,7 +12,8 @@ protocol HomeViewModelProtocol {
 	init(listDataSource: HomeDataSourceProtocol)
 	var dataSource: HomeDataSourceProtocol? { get set }
 	func fetchTopPlayers(completion: @escaping () -> Void)
-	func fetchPlayer(_ playerId: Int, teamId: Int, completion: @escaping (Player?) -> Void)
+	func selectedPlayer(_ indexPath: IndexPath) -> Player?
+	func selectedTeam(_ indexPath: IndexPath) -> Int?
 }
 
 class HomeViewModel: HomeViewModelProtocol {
@@ -24,6 +25,14 @@ class HomeViewModel: HomeViewModelProtocol {
 		dataSource = listDataSource
 	}
 
+	func selectedPlayer(_ indexPath: IndexPath) -> Player? {
+		return dataSource?.data?[indexPath]
+	}
+
+	func selectedTeam(_ indexPath: IndexPath) -> Int? {
+		return dataSource?.data?.teamId(for: indexPath)
+	}
+
 	func fetchTopPlayers(completion: @escaping () -> Void) {
 		service.fetchTopPlayerStats(match: "NRL20172101") { [weak self] details in
 			guard let this = self else {
@@ -31,12 +40,6 @@ class HomeViewModel: HomeViewModelProtocol {
 			}
 			this.dataSource?.data = details
 			completion()
-		}
-	}
-
-	func fetchPlayer(_ playerId: Int, teamId: Int, completion: @escaping (Player?) -> Void) {
-		service.fetchPlayerDetails(for: playerId, teamId: teamId) { player in
-			completion(player)
 		}
 	}
 }

@@ -16,6 +16,19 @@ class HomePlayerCell: UICollectionViewCell {
 	@IBOutlet weak var numberLabel: UILabel!
 	@IBOutlet weak var statValueLabel: UILabel!
 
+	override func awakeFromNib() {
+		super.awakeFromNib()
+		imageView.layer.masksToBounds = true
+	}
+	override func layoutSubviews() {
+		super.layoutSubviews()
+		imageView.layer.cornerRadius = imageView.bounds.width / 2
+	}
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		imageView.layer.cornerRadius = imageView.bounds.width / 2
+	}
+
 	func updatePlayer(_ player: Player?) {
 		shortNameLabel.text = player?.shortName
 	}

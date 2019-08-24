@@ -40,11 +40,7 @@ extension UIImageView {
 	/// Load image with url
 	///
 	/// - Parameter url: Optional String
-	func loadImage(with url: String?) {
-		guard let urlString = url, let imageUrl = URL(string: urlString) else {
-			image = nil
-			return
-		}
-		ImageService.loadImage(with: imageUrl, placeholderImage: nil, imageView: self)
+	func loadImage(from url: URL) {
+		ImageService.loadImage(with: url, placeholderImage: nil, imageView: self)
 	}
 }

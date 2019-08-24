@@ -20,16 +20,7 @@ class HomeDataSource: NSObject, HomeDataSourceProtocol {
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		  let cell = HomePlayerLeftCell.dequeueReusableCell(forCollectionView: collectionView, indexPath: indexPath) as HomePlayerLeftCell
-
-		let index = Int(indexPath.item / 2)
-		var item: Player?
-		if indexPath.item % 2 == 0 {
-			item = data?[indexPath.section].teamA?.topPlayers?[index]
-		} else {
-			item = data?[indexPath.section].teamB?.topPlayers?[indexPath.item / 2]
-		}
-
-		cell.updatePlayer(item)
+		cell.updatePlayer( data?[indexPath])
 		return cell
 	}
 
