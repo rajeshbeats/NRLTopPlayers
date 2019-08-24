@@ -8,10 +8,6 @@
 
 import Foundation
 
-enum StatType: String {
-	case fantasyPoint
-}
-
 protocol NRLServiceProtocol {
 
 	func fetchTopPlayerStats(match: String, completion: @escaping ([MatchDetails]?) -> Void)

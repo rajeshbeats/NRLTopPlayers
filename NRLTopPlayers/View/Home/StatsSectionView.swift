@@ -12,4 +12,10 @@ class StatsSectionView: UICollectionReusableView {
 	@IBOutlet weak var statLabel: UILabel!
 	@IBOutlet weak var teamALabel: UILabel!
 	@IBOutlet weak var teamBLabel: UILabel!
+
+	func update(with details: StatsSection?) {
+		statLabel.text =  details?.title.uppercased()
+		teamALabel.text = details?.teamA
+		teamBLabel.text = details?.teamB
+	}
 }

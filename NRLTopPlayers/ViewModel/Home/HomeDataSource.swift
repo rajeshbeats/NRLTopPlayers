@@ -18,9 +18,18 @@ class HomeDataSource: NSObject, HomeDataSourceProtocol {
 
 	var data: [MatchDetails]?
 
+	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+		let view: StatsSectionView = StatsSectionView.dequeueViewForSupplementaryElement(forCollectionView: collectionView, kind: kind, for: indexPath)
+		view.update(with: data?.statsSection(for: indexPath.section))
+		return view
+	}
+
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		  let cell = HomePlayerLeftCell.dequeueReusableCell(forCollectionView: collectionView, indexPath: indexPath) as HomePlayerLeftCell
-		cell.updatePlayer( data?[indexPath])
+		let identifier =  String(describing: indexPath.isLeft ? HomePlayerLeftCell.self : HomePlayerRightCell.self)
+		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? HomePlayerCell else {
+			fatalError("HomePlayerCell not available")
+		}
+		cell.updatePlayer(data?[indexPath])
 		return cell
 	}
 

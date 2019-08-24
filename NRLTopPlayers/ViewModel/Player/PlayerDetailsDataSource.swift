@@ -11,7 +11,6 @@ import UIKit
 protocol PlayerDetailsDataSourceProtocol: UICollectionViewDataSource {
 
 	var player: Player { get set }
-	//var stats: [String]
 	init(_ player: Player)
 
 }

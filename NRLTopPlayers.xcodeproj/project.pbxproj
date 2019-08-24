@@ -19,6 +19,7 @@
 		934E194C23114ED80030DA01 /* PlayerDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E194A23114ED80030DA01 /* PlayerDetailsDataSource.swift */; };
 		934E1950231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E194F231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift */; };
 		934E1952231167E50030DA01 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E1951231167E50030DA01 /* StringExtension.swift */; };
+		934E1954231173FA0030DA01 /* IndexPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E1953231173FA0030DA01 /* IndexPathExtension.swift */; };
 		935003F9230FAEEE00D1E339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935003F8230FAEEE00D1E339 /* AppDelegate.swift */; };
 		935003FE230FAEEE00D1E339 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935003FC230FAEEE00D1E339 /* Main.storyboard */; };
 		93500400230FAEEF00D1E339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935003FF230FAEEF00D1E339 /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		934E194A23114ED80030DA01 /* PlayerDetailsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailsDataSource.swift; sourceTree = "<group>"; };
 		934E194F231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedLayout.swift; sourceTree = "<group>"; };
 		934E1951231167E50030DA01 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		934E1953231173FA0030DA01 /* IndexPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPathExtension.swift; sourceTree = "<group>"; };
 		935003F5230FAEEE00D1E339 /* NRLTopPlayers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NRLTopPlayers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		935003F8230FAEEE00D1E339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		935003FD230FAEEE00D1E339 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -125,8 +127,8 @@
 		934E194823114EB90030DA01 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				934E194A23114ED80030DA01 /* PlayerDetailsDataSource.swift */,
 				934E194923114ED80030DA01 /* PlayerDetailsViewModel.swift */,
+				934E194A23114ED80030DA01 /* PlayerDetailsDataSource.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -181,7 +183,6 @@
 				93B8945A2310C75700FE4BDB /* ViewModel */,
 				93B894572310C75700FE4BDB /* Resource */,
 				935003F8230FAEEE00D1E339 /* AppDelegate.swift */,
-				935003FC230FAEEE00D1E339 /* Main.storyboard */,
 			);
 			path = NRLTopPlayers;
 			sourceTree = "<group>";
@@ -203,6 +204,7 @@
 				934E19372310E1A80030DA01 /* UICollectionViewCellExtension.swift */,
 				934E194F231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift */,
 				934E1951231167E50030DA01 /* StringExtension.swift */,
+				934E1953231173FA0030DA01 /* IndexPathExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -228,6 +230,7 @@
 		93B894592310C75700FE4BDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				935003FC230FAEEE00D1E339 /* Main.storyboard */,
 				934E194E23114EF60030DA01 /* Home */,
 				934E194D23114EEE0030DA01 /* Player */,
 			);
@@ -467,6 +470,7 @@
 				934E194B23114ED80030DA01 /* PlayerDetailsViewModel.swift in Sources */,
 				93B894652310C9C500FE4BDB /* NetworkService.swift in Sources */,
 				93B894692310CCC700FE4BDB /* StatsSectionView.swift in Sources */,
+				934E1954231173FA0030DA01 /* IndexPathExtension.swift in Sources */,
 				934E1950231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift in Sources */,
 				934E19382310E1A80030DA01 /* UICollectionViewCellExtension.swift in Sources */,
 			);
