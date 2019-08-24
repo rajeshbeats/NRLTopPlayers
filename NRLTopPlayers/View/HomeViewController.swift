@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class HomeViewController: UIViewController {
 	@IBOutlet weak var collectionView: UICollectionView!
 	let datasource = HomeDataSource()
 	lazy var viewModel: HomeViewModelProtocol = {
@@ -28,7 +28,15 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 			}
 		}
 	}
+}
 
+extension HomeViewController: UICollectionViewDelegate {
+	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+
+	}
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 		return CGSize(width: (view.bounds.width / 2) - 10, height: 170)
 	}

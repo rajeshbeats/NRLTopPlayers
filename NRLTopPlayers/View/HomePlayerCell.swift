@@ -15,6 +15,10 @@ class HomePlayerCell: UICollectionViewCell {
 	@IBOutlet weak var statLabel: UILabel!
 	@IBOutlet weak var numberLabel: UILabel!
 	@IBOutlet weak var statValueLabel: UILabel!
+
+	func updatePlayer(_ player: Player?) {
+		shortNameLabel.text = player?.shortName
+	}
 }
 
 class HomePlayerLeftCell: HomePlayerCell {

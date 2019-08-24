@@ -11,7 +11,6 @@ import UIKit
 /// Home Data Source Protocol
 protocol HomeDataSourceProtocol: UICollectionViewDataSource {
 
-	/// Array of CityLocation
 	var data: [MatchDetails]? { get set }
 }
 
@@ -30,7 +29,7 @@ class HomeDataSource: NSObject, HomeDataSourceProtocol {
 			item = data?[indexPath.section].teamB?.topPlayers?[indexPath.item / 2]
 		}
 
-		cell.shortNameLabel.text = item?.shortName
+		cell.updatePlayer(item)
 		return cell
 	}
 
