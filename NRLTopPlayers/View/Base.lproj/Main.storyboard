@@ -284,23 +284,23 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RUNNING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IwC-ok-GG4">
-                                            <rect key="frame" x="8" y="8" width="398" height="25"/>
+                                            <rect key="frame" x="8" y="13" width="398" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="cYR-q8-gJE"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Panthers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S62-et-0X2">
-                                            <rect key="frame" x="8" y="43" width="198.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <rect key="frame" x="8" y="48" width="198.5" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Melbourne" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEp-MK-xOp">
-                                            <rect key="frame" x="207.5" y="43" width="198.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                            <rect key="frame" x="207.5" y="46" width="198.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -316,7 +316,7 @@
                                     <color key="backgroundColor" name="Primary"/>
                                     <constraints>
                                         <constraint firstItem="S62-et-0X2" firstAttribute="top" secondItem="IwC-ok-GG4" secondAttribute="bottom" constant="10" id="96m-X1-BVR"/>
-                                        <constraint firstItem="HEp-MK-xOp" firstAttribute="top" secondItem="IwC-ok-GG4" secondAttribute="bottom" constant="10" id="9WO-Jp-7nJ"/>
+                                        <constraint firstItem="HEp-MK-xOp" firstAttribute="top" secondItem="IwC-ok-GG4" secondAttribute="bottom" constant="8" id="9WO-Jp-7nJ"/>
                                         <constraint firstItem="HEp-MK-xOp" firstAttribute="bottom" secondItem="HjV-yi-Ryu" secondAttribute="bottomMargin" id="GY8-QW-zBc"/>
                                         <constraint firstItem="HEp-MK-xOp" firstAttribute="trailing" secondItem="HjV-yi-Ryu" secondAttribute="trailingMargin" id="W9N-dL-BID"/>
                                         <constraint firstItem="IwC-ok-GG4" firstAttribute="leading" secondItem="HjV-yi-Ryu" secondAttribute="leadingMargin" id="X2Y-OA-IeC"/>
@@ -325,7 +325,7 @@
                                         <constraint firstAttribute="trailingMargin" secondItem="IwC-ok-GG4" secondAttribute="trailing" id="gv7-Dk-6Lf"/>
                                         <constraint firstItem="GR0-G0-NtU" firstAttribute="centerX" secondItem="HjV-yi-Ryu" secondAttribute="centerX" id="kjR-NF-yoJ"/>
                                         <constraint firstItem="GR0-G0-NtU" firstAttribute="leading" secondItem="S62-et-0X2" secondAttribute="trailing" id="lSD-Cc-Z0q"/>
-                                        <constraint firstItem="IwC-ok-GG4" firstAttribute="top" secondItem="HjV-yi-Ryu" secondAttribute="topMargin" id="qwt-K8-lgc"/>
+                                        <constraint firstItem="IwC-ok-GG4" firstAttribute="top" secondItem="HjV-yi-Ryu" secondAttribute="topMargin" constant="5" id="qwt-K8-lgc"/>
                                         <constraint firstItem="S62-et-0X2" firstAttribute="bottom" secondItem="HjV-yi-Ryu" secondAttribute="bottomMargin" id="wM4-k8-3af"/>
                                         <constraint firstItem="S62-et-0X2" firstAttribute="leading" secondItem="HjV-yi-Ryu" secondAttribute="leadingMargin" id="y3O-Z2-eS5"/>
                                     </constraints>

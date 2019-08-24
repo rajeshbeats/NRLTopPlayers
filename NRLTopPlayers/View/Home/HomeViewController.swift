@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
 		if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
 			layout.sectionHeadersPinToVisibleBounds = true
 		}
+		fetchTopPlayers()
 	}
 
 	private func fetchTopPlayers() {

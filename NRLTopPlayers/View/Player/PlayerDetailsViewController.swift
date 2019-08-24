@@ -21,6 +21,7 @@ class PlayerDetailsViewController: UIViewController {
 		collectionView.delegate = self
 		collectionView.collectionViewLayout = UICollectionViewLeftAlignedLayout()
 		activityIndicatorView.isHidden = false
+		fetchPlayerDetails()
     }
 
 	private func fetchPlayerDetails() {
