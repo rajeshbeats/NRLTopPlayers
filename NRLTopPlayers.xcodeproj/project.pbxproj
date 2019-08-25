@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6246B3A3364DA055B933D5D4 /* Pods_NRLTopPlayersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A91A59ED2FE5DCA4EFD80EE /* Pods_NRLTopPlayersTests.framework */; };
 		64D377964F2D58B80DD1E9BF /* Pods_NRLTopPlayers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D363A20707205E1243BED0 /* Pods_NRLTopPlayers.framework */; };
+		93021E8C2312279F006CA5D8 /* URLMockProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E8B2312279F006CA5D8 /* URLMockProtocol.swift */; };
+		93021E8E231227BA006CA5D8 /* MockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E8D231227BA006CA5D8 /* MockResponse.swift */; };
+		93021E9123123349006CA5D8 /* NRLPlayerDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E9023123349006CA5D8 /* NRLPlayerDetailsTests.swift */; };
+		93021E9323123384006CA5D8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E9223123384006CA5D8 /* Utility.swift */; };
 		934E19382310E1A80030DA01 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E19372310E1A80030DA01 /* UICollectionViewCellExtension.swift */; };
 		934E193A2310F3B80030DA01 /* NRLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E19392310F3B80030DA01 /* NRLService.swift */; };
 		934E193C2310FF480030DA01 /* MatchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E193B2310FF480030DA01 /* MatchDetails.swift */; };
@@ -49,6 +53,10 @@
 /* Begin PBXFileReference section */
 		5A91A59ED2FE5DCA4EFD80EE /* Pods_NRLTopPlayersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLTopPlayersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6AE9481B196B7E9EF8DD90 /* Pods-NRLTopPlayersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLTopPlayersTests.debug.xcconfig"; path = "Target Support Files/Pods-NRLTopPlayersTests/Pods-NRLTopPlayersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		93021E8B2312279F006CA5D8 /* URLMockProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMockProtocol.swift; sourceTree = "<group>"; };
+		93021E8D231227BA006CA5D8 /* MockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponse.swift; sourceTree = "<group>"; };
+		93021E9023123349006CA5D8 /* NRLPlayerDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLPlayerDetailsTests.swift; sourceTree = "<group>"; };
+		93021E9223123384006CA5D8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		934E19372310E1A80030DA01 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		934E19392310F3B80030DA01 /* NRLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLService.swift; sourceTree = "<group>"; };
 		934E193B2310FF480030DA01 /* MatchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetails.swift; sourceTree = "<group>"; };
@@ -113,6 +121,15 @@
 				D8448076C7E91A07EBFE6734 /* Pods-NRLTopPlayersTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		93021E8F231227BE006CA5D8 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				93021E8B2312279F006CA5D8 /* URLMockProtocol.swift */,
+				93021E8D231227BA006CA5D8 /* MockResponse.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 		934E194723114EB20030DA01 /* Home */ = {
@@ -191,7 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				9350040D230FAEEF00D1E339 /* NRLTopPlayersTests.swift */,
+				93021E9023123349006CA5D8 /* NRLPlayerDetailsTests.swift */,
 				9350040F230FAEEF00D1E339 /* Info.plist */,
+				93021E8F231227BE006CA5D8 /* Mock */,
+				93021E9223123384006CA5D8 /* Utility.swift */,
 			);
 			path = NRLTopPlayersTests;
 			sourceTree = "<group>";
@@ -480,7 +500,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93021E9323123384006CA5D8 /* Utility.swift in Sources */,
+				93021E9123123349006CA5D8 /* NRLPlayerDetailsTests.swift in Sources */,
+				93021E8E231227BA006CA5D8 /* MockResponse.swift in Sources */,
 				9350040E230FAEEF00D1E339 /* NRLTopPlayersTests.swift in Sources */,
+				93021E8C2312279F006CA5D8 /* URLMockProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

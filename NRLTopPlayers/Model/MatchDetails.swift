@@ -96,6 +96,7 @@ extension Array where Element == MatchDetails {
 			return self[indexPath.section].teamB?.teamId
 		}
 	}
+
 	func sort() -> [Element] {
 		return self.sorted(by: { $0.statType ?? "" < $1.statType ?? ""})
 	}
