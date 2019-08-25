@@ -43,7 +43,8 @@ class PlayerDetailsViewController: UIViewController {
 extension PlayerDetailsViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-		let text = viewModel?.dataSource.player.displayStats(for: indexPath)
+		let key = viewModel?.dataSource.stats[indexPath.item]
+		let text = viewModel?.dataSource.player.displayStats(for: key ?? "")
 		var size = text?.sizeOfDynamicFont(font: UIFont.systemFont(ofSize: 14))
 		size?.width += 20
 		size?.height += 20
@@ -53,6 +54,12 @@ extension PlayerDetailsViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout
 		collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 		return CGSize(width: collectionView.bounds.width, height: 230)
+	}
+
+	func collectionView(_ collectionView: UICollectionView, layout
+		collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+		let height: CGFloat = (viewModel?.showStatsNotAvailable ?? false) ? 40 : 0
+		return CGSize(width: collectionView.bounds.width, height: height)
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,

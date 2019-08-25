@@ -13,6 +13,7 @@
 		93021E8E231227BA006CA5D8 /* MockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E8D231227BA006CA5D8 /* MockResponse.swift */; };
 		93021E9123123349006CA5D8 /* NRLPlayerDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E9023123349006CA5D8 /* NRLPlayerDetailsTests.swift */; };
 		93021E9323123384006CA5D8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E9223123384006CA5D8 /* Utility.swift */; };
+		93021E9523123F1E006CA5D8 /* PlayerFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E9423123F1E006CA5D8 /* PlayerFooterView.swift */; };
 		934E19382310E1A80030DA01 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E19372310E1A80030DA01 /* UICollectionViewCellExtension.swift */; };
 		934E193A2310F3B80030DA01 /* NRLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E19392310F3B80030DA01 /* NRLService.swift */; };
 		934E193C2310FF480030DA01 /* MatchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E193B2310FF480030DA01 /* MatchDetails.swift */; };
@@ -57,6 +58,7 @@
 		93021E8D231227BA006CA5D8 /* MockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponse.swift; sourceTree = "<group>"; };
 		93021E9023123349006CA5D8 /* NRLPlayerDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLPlayerDetailsTests.swift; sourceTree = "<group>"; };
 		93021E9223123384006CA5D8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		93021E9423123F1E006CA5D8 /* PlayerFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFooterView.swift; sourceTree = "<group>"; };
 		934E19372310E1A80030DA01 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		934E19392310F3B80030DA01 /* NRLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLService.swift; sourceTree = "<group>"; };
 		934E193B2310FF480030DA01 /* MatchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetails.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				934E193D231135AF0030DA01 /* PlayerDetailsViewController.swift */,
 				934E194323114D1F0030DA01 /* PlayerStatsCell.swift */,
 				934E194523114E860030DA01 /* PlayerHeaderView.swift */,
+				93021E9423123F1E006CA5D8 /* PlayerFooterView.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -480,6 +483,7 @@
 				934E194423114D1F0030DA01 /* PlayerStatsCell.swift in Sources */,
 				934E193A2310F3B80030DA01 /* NRLService.swift in Sources */,
 				935003F9230FAEEE00D1E339 /* AppDelegate.swift in Sources */,
+				93021E9523123F1E006CA5D8 /* PlayerFooterView.swift in Sources */,
 				93B8946F2310D4F100FE4BDB /* HomeDataSource.swift in Sources */,
 				93B894612310C92E00FE4BDB /* ImageService.swift in Sources */,
 				934E193C2310FF480030DA01 /* MatchDetails.swift in Sources */,

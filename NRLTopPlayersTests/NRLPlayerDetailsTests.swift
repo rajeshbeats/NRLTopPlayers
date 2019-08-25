@@ -34,6 +34,11 @@ class NRLPlayerDetailsTests: XCTestCase {
 		viewModel.fetchPlayerDetails { error in
 			XCTAssert(error == nil, "Unexpected error")
 			XCTAssert(dataSource.player.lastMatchStats!.count > 0, "Last matches stats for playe should be available")
+			XCTAssert(dataSource.stats.count > 0, "Last matches stats for playe should be available")
+			let key = dataSource.stats[0]
+			let value = dataSource.player.lastMatchStats![key]!
+			XCTAssert(dataSource.player.displayStats(for: key) == "\(key.displayFormat) : \(value ?? 0)", "Stats display format error")
+			XCTAssert(viewModel.showStatsNotAvailable == false, "Not available should be false")
 			testExpectation.fulfill()
 		}
 		wait(for: [testExpectation], timeout: 5)
@@ -49,6 +54,24 @@ class NRLPlayerDetailsTests: XCTestCase {
 		viewModel.fetchPlayerDetails { error in
 			XCTAssert(error != nil, "Proper error should be availabe")
 			XCTAssert(dataSource.player.lastMatchStats == nil, "Last matches stats should be empty on error")
+			XCTAssert(viewModel.showStatsNotAvailable == true, "Not available status should be true")
+			XCTAssert(dataSource.stats.count == 0, "Last matches stats should be empty on error")
+			testExpectation.fulfill()
+		}
+		wait(for: [testExpectation], timeout: 5)
+	}
+
+	func testErrorAPIPlayerDetails() {
+		URLMockProtocol.testURLs = [url: nil]
+		let testExpectation = expectation(description: "Error response from endpoint")
+
+		let dataSource = PlayerDetailsDataSource(player)
+		let viewModel = PlayerDetailsViewModel(dataSource: dataSource, teamId: 55011)
+
+		viewModel.fetchPlayerDetails { error in
+			XCTAssert(error != nil, "Proper error should be availabe")
+			XCTAssert(dataSource.player.lastMatchStats == nil, "Last matches stats should be empty on error")
+			XCTAssert(dataSource.stats.count == 0, "Last matches stats should be empty on error")
 			testExpectation.fulfill()
 		}
 		wait(for: [testExpectation], timeout: 5)

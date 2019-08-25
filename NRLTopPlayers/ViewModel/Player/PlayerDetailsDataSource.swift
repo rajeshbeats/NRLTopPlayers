@@ -11,6 +11,7 @@ import UIKit
 protocol PlayerDetailsDataSourceProtocol: UICollectionViewDataSource {
 
 	var player: Player { get set }
+	var stats: [String] { get set }
 	init(_ player: Player)
 
 }
@@ -18,20 +19,32 @@ protocol PlayerDetailsDataSourceProtocol: UICollectionViewDataSource {
 class PlayerDetailsDataSource: NSObject, PlayerDetailsDataSourceProtocol {
 
 	var player: Player
+	var stats: [String] = []
 
 	required init(_ player: Player) {
 		self.player = player
 	}
 
 	func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		let view: PlayerHeaderView = PlayerHeaderView.dequeueViewForSupplementaryElement(forCollectionView: collectionView, kind: kind, for: indexPath)
-		view.update(player)
-		return view
+		switch kind {
+		case UICollectionView.elementKindSectionHeader:
+			let view: PlayerHeaderView = PlayerHeaderView.dequeueViewForSupplementaryElement(forCollectionView: collectionView, kind: kind, for: indexPath)
+			view.update(player)
+			return view
+
+		case UICollectionView.elementKindSectionFooter:
+			let view: PlayerFooterView = PlayerFooterView.dequeueViewForSupplementaryElement(forCollectionView: collectionView, kind: kind, for: indexPath)
+			return view
+		default:
+			debugPrint("Unknow section kind")
+			fatalError()
+		}
 	}
 
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = PlayerStatsCell.dequeueReusableCell(forCollectionView: collectionView, indexPath: indexPath) as PlayerStatsCell
-		cell.label.text = player.displayStats(for: indexPath)
+		let key = stats[indexPath.item]
+		cell.label.text = player.displayStats(for: key)
 		return cell
 	}
 
@@ -40,6 +53,6 @@ class PlayerDetailsDataSource: NSObject, PlayerDetailsDataSourceProtocol {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		return player.lastMatchStats?.count ?? 0
+		return stats.count
 	}
 }
