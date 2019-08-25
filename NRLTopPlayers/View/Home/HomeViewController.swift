@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
 	@IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+	@IBOutlet weak var noDataAvailableLabel: UILabel!
 
 	lazy var viewModel: HomeViewModelProtocol = {
 		return HomeViewModel(listDataSource: HomeDataSource())
@@ -23,6 +24,7 @@ class HomeViewController: UIViewController {
 		collectionView.delegate = self
 		collectionView.dataSource = viewModel.dataSource
 		activityIndicatorView.isHidden = false
+		noDataAvailableLabel.isHidden = true
 		if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
 			layout.sectionHeadersPinToVisibleBounds = true
 		}
@@ -39,6 +41,7 @@ class HomeViewController: UIViewController {
 				this.activityIndicatorView.isHidden = true
 				if let appError = error {
 					this.showErrorMessage(appError.localizedDescription)
+					this.noDataAvailableLabel.isHidden = false
 				}
 			}
 		}
