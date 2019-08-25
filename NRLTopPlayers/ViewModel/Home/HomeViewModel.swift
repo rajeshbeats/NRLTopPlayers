@@ -8,11 +8,33 @@
 
 import Foundation
 
+/// Home view model protocol
 protocol HomeViewModelProtocol {
+
+	/// Initialiser for HomeViewModel
+	///
+	/// - Parameter listDataSource: HomeDataSourceProtocol
 	init(listDataSource: HomeDataSourceProtocol)
+
+	/// Data source of protocol : HomeDataSourceProtocol
 	var dataSource: HomeDataSourceProtocol? { get set }
+
+	/// Fetch top players
+	///
+	/// - Parameter completion: Optional Error
+	/// - Returns: Void
 	func fetchTopPlayers(completion: @escaping (Error?) -> Void)
+
+	/// Player for selected indexpath
+	///
+	/// - Parameter indexPath: IndexPath
+	/// - Returns: Optional Player
 	func selectedPlayer(_ indexPath: IndexPath) -> Player?
+
+	/// Team id for selected indexpath
+	///
+	/// - Parameter indexPath: IndexPath
+	/// - Returns: TeamId optional Int
 	func selectedTeam(_ indexPath: IndexPath) -> Int?
 }
 

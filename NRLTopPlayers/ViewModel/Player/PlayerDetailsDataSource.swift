@@ -8,12 +8,19 @@
 
 import UIKit
 
+/// Protocols for PlayerDetailsDataSource
 protocol PlayerDetailsDataSourceProtocol: UICollectionViewDataSource {
 
+	/// Player isntance
 	var player: Player { get set }
-	var stats: [String] { get set }
-	init(_ player: Player)
 
+	/// List of sttatus
+	var stats: [String] { get set }
+
+	/// Initializer for PlayerDetailsDataSourceProtocol
+	///
+	/// - Parameter player: Player
+	init(_ player: Player)
 }
 
 class PlayerDetailsDataSource: NSObject, PlayerDetailsDataSourceProtocol {
@@ -44,7 +51,7 @@ class PlayerDetailsDataSource: NSObject, PlayerDetailsDataSourceProtocol {
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = PlayerStatsCell.dequeueReusableCell(forCollectionView: collectionView, indexPath: indexPath) as PlayerStatsCell
 		let key = stats[indexPath.item]
-		cell.label.text = player.displayStats(for: key)
+		cell.label.text = player.formattedStatsValue(for: key)
 		return cell
 	}
 

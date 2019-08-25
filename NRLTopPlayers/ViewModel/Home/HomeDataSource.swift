@@ -11,6 +11,7 @@ import UIKit
 /// Home Data Source Protocol
 protocol HomeDataSourceProtocol: UICollectionViewDataSource {
 
+	/// Array of MatchDetails
 	var data: [MatchDetails]? { get set }
 }
 
@@ -38,6 +39,7 @@ class HomeDataSource: NSObject, HomeDataSourceProtocol {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+		// Display twice the number of Team A topplayers
 		return (data?[section].teamA?.topPlayers?.count ?? 0 ) * 2
 	}
 }

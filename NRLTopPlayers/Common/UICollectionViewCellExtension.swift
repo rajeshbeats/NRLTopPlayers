@@ -10,6 +10,12 @@ import UIKit
 
 extension UICollectionViewCell {
 
+	/// A generic function for getting resuable cell for collectionview
+	///
+	/// - Parameters:
+	///   - collectionView: UICollectionView instance
+	///   - indexPath: IndexPath
+	/// - Returns: Generic UICollectionViewCell instance
 	static func dequeueReusableCell<T: UICollectionViewCell>(forCollectionView collectionView: UICollectionView, indexPath: IndexPath) -> T {
 		guard let cellIdentifier = classForCoder().description().components(separatedBy: ".").last,
 			let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? T else {
@@ -20,6 +26,14 @@ extension UICollectionViewCell {
 }
 
 extension UICollectionReusableView {
+
+	/// A generic function for getting Collectionview footer and header view
+	///
+	/// - Parameters:
+	///   - collectionView: UICollectionView instance
+	///   - kind: Element kind
+	///   - indexPath: IndexPath
+	/// - Returns: Generic UICollectionReusableView instance
 	static func dequeueViewForSupplementaryElement<T: UICollectionReusableView>(forCollectionView collectionView: UICollectionView,
 																				kind: String, for indexPath: IndexPath) -> T {
 		guard let identifier = classForCoder().description().components(separatedBy: ".").last,

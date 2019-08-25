@@ -8,6 +8,13 @@
 
 import UIKit
 
+private extension Constant {
+	static let cellPadding: CGFloat = 20
+	static let headerHeight: CGFloat = 230
+	static let footerHeight: CGFloat = 40
+	static let cellMargin: CGFloat = 5
+}
+
 class PlayerDetailsViewController: UIViewController {
 
 	@IBOutlet weak var collectionView: UICollectionView!
@@ -19,6 +26,7 @@ class PlayerDetailsViewController: UIViewController {
 		title = Constant.appName
 		collectionView.dataSource = viewModel?.dataSource
 		collectionView.delegate = self
+		// CollectionViewLayout for left aligned cell
 		collectionView.collectionViewLayout = UICollectionViewLeftAlignedLayout()
 		activityIndicatorView.isHidden = false
 		fetchPlayerDetails()
@@ -44,21 +52,22 @@ extension PlayerDetailsViewController: UICollectionViewDelegateFlowLayout {
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
 		let key = viewModel?.dataSource.stats[indexPath.item]
-		let text = viewModel?.dataSource.player.displayStats(for: key ?? "")
+		let text = viewModel?.dataSource.player.formattedStatsValue(for: key ?? "")
 		var size = text?.sizeOfDynamicFont(font: UIFont.systemFont(ofSize: 14))
-		size?.width += 20
-		size?.height += 20
+		size?.width += Constant.cellPadding
+		size?.height += Constant.cellPadding
 		return size ?? .zero
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout
 		collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-		return CGSize(width: collectionView.bounds.width, height: 230)
+		return CGSize(width: collectionView.bounds.width, height: Constant.headerHeight)
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout
 		collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-		let height: CGFloat = (viewModel?.showStatsNotAvailable ?? false) ? 40 : 0
+		// Show not available message only if last match stats not available
+		let height: CGFloat = (viewModel?.showStatsNotAvailable ?? false) ? Constant.footerHeight : 0
 		return CGSize(width: collectionView.bounds.width, height: height)
 	}
 
@@ -68,6 +77,6 @@ extension PlayerDetailsViewController: UICollectionViewDelegateFlowLayout {
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-		return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+		return UIEdgeInsets(top: Constant.cellMargin, left: Constant.cellMargin, bottom: Constant.cellMargin, right: Constant.cellMargin)
 	}
 }

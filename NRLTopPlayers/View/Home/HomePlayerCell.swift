@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Common class for Home Player headshot cell
 class HomePlayerCell: UICollectionViewCell {
 	@IBOutlet weak var imageView: UIImageView!
 	@IBOutlet weak var shortNameLabel: UILabel!
@@ -22,8 +23,8 @@ class HomePlayerCell: UICollectionViewCell {
 	}
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		imageView.layer.cornerRadius = imageView.bounds.width / 2
-		numberLabel.layer.cornerRadius = numberLabel.bounds.width / 2
+		imageView.round()
+		numberLabel.round()
 	}
 
 	func updatePlayer(_ player: Player?) {
@@ -37,3 +38,10 @@ class HomePlayerCell: UICollectionViewCell {
 
 class HomePlayerLeftCell: HomePlayerCell {}
 class HomePlayerRightCell: HomePlayerCell {}
+
+extension UIView {
+	/// Make circle round of UIView objects
+	func round() {
+		layer.cornerRadius = bounds.width / 2
+	}
+}

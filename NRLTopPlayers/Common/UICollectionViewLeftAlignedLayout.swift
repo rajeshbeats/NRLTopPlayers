@@ -7,6 +7,8 @@
 //
 
 import UIKit
+
+/// A reusable class for left aligned collection view cells
 open class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
 	open override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
 		return super.layoutAttributesForElements(in: rect)?.map { $0.representedElementKind == nil ? (layoutAttributesForItem(at: $0.indexPath) ?? $0 ) : $0 }

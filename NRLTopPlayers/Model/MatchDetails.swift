@@ -71,15 +71,23 @@ struct Player: Codable {
 }
 
 extension Array where Element == MatchDetails {
+
+	/// Retrieve Player object for given indexpath
+	///
+	/// - Parameter indexPath: IndexPath
 	subscript(indexPath: IndexPath) -> Player? {
 		let index = Int(indexPath.item / 2)
-		if indexPath.item % 2 == 0 {
+		if indexPath.isLeft {
 			return self[indexPath.section].teamA?.topPlayers?[index]
 		} else {
 			return self[indexPath.section].teamB?.topPlayers?[indexPath.item / 2]
 		}
 	}
 
+	/// Stats section details for given section
+	///
+	/// - Parameter section: Int
+	/// - Returns: instance of StatsSection
 	func statsSection(for section: Int) -> StatsSection {
 
 		let stats = self[section]
@@ -89,14 +97,21 @@ extension Array where Element == MatchDetails {
 
 	}
 
+	/// Team ID of player in selected index path
+	///
+	/// - Parameter indexPath: IndexPath
+	/// - Returns: Optional Int
 	func teamId(for indexPath: IndexPath) -> Int? {
-		if indexPath.item % 2 == 0 {
+		if indexPath.isLeft {
 			return self[indexPath.section].teamA?.teamId
 		} else {
 			return self[indexPath.section].teamB?.teamId
 		}
 	}
 
+	/// Sort match details in alphabetical order of statType
+	///
+	/// - Returns: Sorted [Element]
 	func sort() -> [Element] {
 		return self.sorted(by: { $0.statType ?? "" < $1.statType ?? ""})
 	}
