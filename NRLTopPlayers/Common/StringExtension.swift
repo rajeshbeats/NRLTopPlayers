@@ -11,4 +11,8 @@ extension String {
 	func sizeOfDynamicFont(font: UIFont) -> CGSize {
 		return self.size(withAttributes: [NSAttributedString.Key.font: font])
 	}
+
+	var displayFormat: String {
+		return replacingOccurrences(of: "_", with: " ").capitalized
+	}
 }

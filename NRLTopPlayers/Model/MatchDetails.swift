@@ -80,11 +80,24 @@ extension Array where Element == MatchDetails {
 		}
 	}
 
+	func statsSection(for section: Int) -> StatsSection {
+
+		let stats = self[section]
+		return StatsSection(title: stats.statType?.displayFormat ?? "",
+							teamA: stats.teamA?.shortName ?? "",
+							teamB: stats.teamB?.shortName ?? "")
+
+	}
+
 	func teamId(for indexPath: IndexPath) -> Int? {
 		if indexPath.item % 2 == 0 {
 			return self[indexPath.section].teamA?.teamId
 		} else {
 			return self[indexPath.section].teamB?.teamId
 		}
+	}
+
+	func sort() -> [Element] {
+		return self.sorted(by: { $0.statType ?? "" < $1.statType ?? ""})
 	}
 }

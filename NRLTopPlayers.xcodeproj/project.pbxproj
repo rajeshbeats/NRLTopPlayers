@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		6246B3A3364DA055B933D5D4 /* Pods_NRLTopPlayersTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A91A59ED2FE5DCA4EFD80EE /* Pods_NRLTopPlayersTests.framework */; };
 		64D377964F2D58B80DD1E9BF /* Pods_NRLTopPlayers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9D363A20707205E1243BED0 /* Pods_NRLTopPlayers.framework */; };
+		93021E8C2312279F006CA5D8 /* URLMockProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E8B2312279F006CA5D8 /* URLMockProtocol.swift */; };
+		93021E8E231227BA006CA5D8 /* MockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E8D231227BA006CA5D8 /* MockResponse.swift */; };
+		93021E9123123349006CA5D8 /* NRLPlayerDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E9023123349006CA5D8 /* NRLPlayerDetailsTests.swift */; };
+		93021E9323123384006CA5D8 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93021E9223123384006CA5D8 /* Utility.swift */; };
 		934E19382310E1A80030DA01 /* UICollectionViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E19372310E1A80030DA01 /* UICollectionViewCellExtension.swift */; };
 		934E193A2310F3B80030DA01 /* NRLService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E19392310F3B80030DA01 /* NRLService.swift */; };
 		934E193C2310FF480030DA01 /* MatchDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E193B2310FF480030DA01 /* MatchDetails.swift */; };
@@ -19,6 +23,7 @@
 		934E194C23114ED80030DA01 /* PlayerDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E194A23114ED80030DA01 /* PlayerDetailsDataSource.swift */; };
 		934E1950231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E194F231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift */; };
 		934E1952231167E50030DA01 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E1951231167E50030DA01 /* StringExtension.swift */; };
+		934E1954231173FA0030DA01 /* IndexPathExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 934E1953231173FA0030DA01 /* IndexPathExtension.swift */; };
 		935003F9230FAEEE00D1E339 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 935003F8230FAEEE00D1E339 /* AppDelegate.swift */; };
 		935003FE230FAEEE00D1E339 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 935003FC230FAEEE00D1E339 /* Main.storyboard */; };
 		93500400230FAEEF00D1E339 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 935003FF230FAEEF00D1E339 /* Assets.xcassets */; };
@@ -48,6 +53,10 @@
 /* Begin PBXFileReference section */
 		5A91A59ED2FE5DCA4EFD80EE /* Pods_NRLTopPlayersTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NRLTopPlayersTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6AE9481B196B7E9EF8DD90 /* Pods-NRLTopPlayersTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NRLTopPlayersTests.debug.xcconfig"; path = "Target Support Files/Pods-NRLTopPlayersTests/Pods-NRLTopPlayersTests.debug.xcconfig"; sourceTree = "<group>"; };
+		93021E8B2312279F006CA5D8 /* URLMockProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLMockProtocol.swift; sourceTree = "<group>"; };
+		93021E8D231227BA006CA5D8 /* MockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponse.swift; sourceTree = "<group>"; };
+		93021E9023123349006CA5D8 /* NRLPlayerDetailsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLPlayerDetailsTests.swift; sourceTree = "<group>"; };
+		93021E9223123384006CA5D8 /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		934E19372310E1A80030DA01 /* UICollectionViewCellExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewCellExtension.swift; sourceTree = "<group>"; };
 		934E19392310F3B80030DA01 /* NRLService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NRLService.swift; sourceTree = "<group>"; };
 		934E193B2310FF480030DA01 /* MatchDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetails.swift; sourceTree = "<group>"; };
@@ -58,6 +67,7 @@
 		934E194A23114ED80030DA01 /* PlayerDetailsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerDetailsDataSource.swift; sourceTree = "<group>"; };
 		934E194F231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedLayout.swift; sourceTree = "<group>"; };
 		934E1951231167E50030DA01 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		934E1953231173FA0030DA01 /* IndexPathExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexPathExtension.swift; sourceTree = "<group>"; };
 		935003F5230FAEEE00D1E339 /* NRLTopPlayers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NRLTopPlayers.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		935003F8230FAEEE00D1E339 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		935003FD230FAEEE00D1E339 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +123,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		93021E8F231227BE006CA5D8 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				93021E8B2312279F006CA5D8 /* URLMockProtocol.swift */,
+				93021E8D231227BA006CA5D8 /* MockResponse.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 		934E194723114EB20030DA01 /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,8 +144,8 @@
 		934E194823114EB90030DA01 /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				934E194A23114ED80030DA01 /* PlayerDetailsDataSource.swift */,
 				934E194923114ED80030DA01 /* PlayerDetailsViewModel.swift */,
+				934E194A23114ED80030DA01 /* PlayerDetailsDataSource.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -181,7 +200,6 @@
 				93B8945A2310C75700FE4BDB /* ViewModel */,
 				93B894572310C75700FE4BDB /* Resource */,
 				935003F8230FAEEE00D1E339 /* AppDelegate.swift */,
-				935003FC230FAEEE00D1E339 /* Main.storyboard */,
 			);
 			path = NRLTopPlayers;
 			sourceTree = "<group>";
@@ -190,7 +208,10 @@
 			isa = PBXGroup;
 			children = (
 				9350040D230FAEEF00D1E339 /* NRLTopPlayersTests.swift */,
+				93021E9023123349006CA5D8 /* NRLPlayerDetailsTests.swift */,
 				9350040F230FAEEF00D1E339 /* Info.plist */,
+				93021E8F231227BE006CA5D8 /* Mock */,
+				93021E9223123384006CA5D8 /* Utility.swift */,
 			);
 			path = NRLTopPlayersTests;
 			sourceTree = "<group>";
@@ -203,6 +224,7 @@
 				934E19372310E1A80030DA01 /* UICollectionViewCellExtension.swift */,
 				934E194F231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift */,
 				934E1951231167E50030DA01 /* StringExtension.swift */,
+				934E1953231173FA0030DA01 /* IndexPathExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -228,6 +250,7 @@
 		93B894592310C75700FE4BDB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				935003FC230FAEEE00D1E339 /* Main.storyboard */,
 				934E194E23114EF60030DA01 /* Home */,
 				934E194D23114EEE0030DA01 /* Player */,
 			);
@@ -467,6 +490,7 @@
 				934E194B23114ED80030DA01 /* PlayerDetailsViewModel.swift in Sources */,
 				93B894652310C9C500FE4BDB /* NetworkService.swift in Sources */,
 				93B894692310CCC700FE4BDB /* StatsSectionView.swift in Sources */,
+				934E1954231173FA0030DA01 /* IndexPathExtension.swift in Sources */,
 				934E1950231162420030DA01 /* UICollectionViewLeftAlignedLayout.swift in Sources */,
 				934E19382310E1A80030DA01 /* UICollectionViewCellExtension.swift in Sources */,
 			);
@@ -476,7 +500,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93021E9323123384006CA5D8 /* Utility.swift in Sources */,
+				93021E9123123349006CA5D8 /* NRLPlayerDetailsTests.swift in Sources */,
+				93021E8E231227BA006CA5D8 /* MockResponse.swift in Sources */,
 				9350040E230FAEEF00D1E339 /* NRLTopPlayersTests.swift in Sources */,
+				93021E8C2312279F006CA5D8 /* URLMockProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,17 +21,23 @@ class PlayerDetailsViewController: UIViewController {
 		collectionView.delegate = self
 		collectionView.collectionViewLayout = UICollectionViewLeftAlignedLayout()
 		activityIndicatorView.isHidden = false
+		fetchPlayerDetails()
+    }
 
-		viewModel?.fetchPlayerDetails(completion: { _ in
-			DispatchQueue.main.async { [weak self] in
-				guard let this = self else {
-					return
-				}
+	private func fetchPlayerDetails() {
+		viewModel?.fetchPlayerDetails { [weak self] error in
+			guard let this = self else {
+				return
+			}
+			DispatchQueue.main.async {
 				this.collectionView.reloadData()
 				this.activityIndicatorView.isHidden = true
+				if let appError = error {
+					this.showErrorMessage(appError.localizedDescription)
+				}
 			}
-		})
-    }
+		}
+	}
 }
 
 extension PlayerDetailsViewController: UICollectionViewDelegateFlowLayout {
@@ -46,7 +52,7 @@ extension PlayerDetailsViewController: UICollectionViewDelegateFlowLayout {
 
 	func collectionView(_ collectionView: UICollectionView, layout
 		collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-		return CGSize(width: view.bounds.width, height: 200)
+		return CGSize(width: collectionView.bounds.width, height: 230)
 	}
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout,
