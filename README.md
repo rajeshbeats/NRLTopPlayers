@@ -2,6 +2,10 @@
 
 This is an iOS app displays the top player stats for NRL matches.
 
+### App Preview
+
+![Screenshot](Screenshot.png)
+
 ### Architecture Pattern
 Model–view–viewmodel (**MVVM**)
 
