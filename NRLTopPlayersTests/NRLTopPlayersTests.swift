@@ -14,6 +14,7 @@ class NRLTopPlayersTests: XCTestCase {
 	let url = Endpoint.topPlayers(match: Constant.matchId)
 
     override func setUp() {
+		// setup URL Mockup
 		setupURLMockup()
     }
 
@@ -21,6 +22,7 @@ class NRLTopPlayersTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
+	/// Test top player data with proper response
 	func testValidTopPlayer() {
 		URLMockProtocol.testURLs = [url: Data(MockResponse.validTopPlayers.utf8)]
 		let testExpectation = expectation(description: "Successful response from endpoint")
@@ -44,6 +46,7 @@ class NRLTopPlayersTests: XCTestCase {
 		wait(for: [testExpectation], timeout: 5)
 	}
 
+	/// Test top player data with invalid response
 	func testInvalidTopPlayer() {
 		URLMockProtocol.testURLs = [url: Data(MockResponse.invalidTopPlayers.utf8)]
 		let testExpectation = expectation(description: "Invalud response from endpoint")
@@ -58,6 +61,7 @@ class NRLTopPlayersTests: XCTestCase {
 		wait(for: [testExpectation], timeout: 5)
 	}
 
+	/// test error handling with network failure case
 	func testNetworkError() {
 		URLMockProtocol.testURLs = [url: nil]
 		let testExpectation = expectation(description: "Invalud response from endpoint")

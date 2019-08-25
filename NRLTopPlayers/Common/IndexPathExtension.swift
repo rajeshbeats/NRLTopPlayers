@@ -10,6 +10,7 @@ import Foundation
 
 extension IndexPath {
 
+	/// Veriy if the index path is on left or right side of the column
 	var isLeft: Bool {
 		return item % 2 == 0
 	}
