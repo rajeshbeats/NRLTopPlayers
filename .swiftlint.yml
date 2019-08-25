@@ -1,0 +1,14 @@
+disabled_rules: # rule identifiers to exclude from running
+  - vertical_parameter_alignment
+
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+force_cast: warning # implicitly
+force_try:
+  severity: warning # explicitly
+
+line_length:
+  warning: 160
+  ignores_interpolated_strings: true
+  ignores_urls: true
+  ignores_comments: true
