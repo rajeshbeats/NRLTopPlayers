@@ -254,15 +254,23 @@
                                 <rect key="frame" x="197" y="438" width="20" height="20"/>
                                 <color key="color" name="Primary"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No data available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-PW-MEl">
+                                <rect key="frame" x="140" y="437.5" width="134" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="a20-wI-j83" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7LO-57-zhq"/>
                             <constraint firstItem="ZEh-vP-vCL" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="B9y-e2-fW8"/>
+                            <constraint firstItem="xbn-PW-MEl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gm9-K7-Bh0"/>
                             <constraint firstItem="a20-wI-j83" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VEL-EF-w9F"/>
                             <constraint firstItem="ZEh-vP-vCL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vny-C4-sd5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a20-wI-j83" secondAttribute="trailing" id="biu-eU-mB2"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="a20-wI-j83" secondAttribute="bottom" id="uxx-R3-eAM"/>
+                            <constraint firstItem="xbn-PW-MEl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wmS-yC-sET"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -270,6 +278,7 @@
                     <connections>
                         <outlet property="activityIndicatorView" destination="ZEh-vP-vCL" id="DWh-oL-LSs"/>
                         <outlet property="collectionView" destination="a20-wI-j83" id="Np7-Mn-Kd7"/>
+                        <outlet property="noDataAvailableLabel" destination="xbn-PW-MEl" id="JIQ-Qt-Z1w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -377,8 +386,8 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Ez-Mu-pgJ">
-                                            <rect key="frame" x="158" y="14.5" width="98.5" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="156.5" y="14.5" width="101" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
