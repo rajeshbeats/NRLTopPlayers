@@ -57,17 +57,6 @@ struct Player: Codable {
 		case jumberNumber = "jumper_number"
 		case lastMatchStats = "last_match_stats"
 	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		playerId = try? values.decodeIfPresent(Int.self, forKey: .playerId)
-		position = try? values.decodeIfPresent(String.self, forKey: .position)
-		fullName = try? values.decodeIfPresent(String.self, forKey: .fullName)
-		shortName = try? values.decodeIfPresent(String.self, forKey: .shortName)
-		statValue = try? values.decodeIfPresent(Int.self, forKey: .statValue)
-		jumberNumber = try? values.decodeIfPresent(Int.self, forKey: .jumberNumber)
-		lastMatchStats = try? values.decodeIfPresent([String: Int?].self, forKey: .lastMatchStats)
-	}
 }
 
 extension Array where Element == MatchDetails {
